@@ -13,7 +13,7 @@ This repository contains the official implementation of the paper/project: **CON
 This project aims to solve the "impossible triangle" of robust perception in autonomous driving. We propose a Teacher-Student architecture distillation training framework based on OpenPCDet. By distilling knowledge from a complex Teacher model (CenterPoint) to a lightweight Student model (PointPillar), we achieve significant performance improvements without increasing the inference computational cost of the Student model.
 
 ## ✨ Core Highlights
-Our proposed training framework consists of three main parts[cite: 57]:
+Our proposed training framework consists of three main parts:
 1. **Cross-Architecture Knowledge Distillation**: Efficient feature-level distillation allowing the anchor-based PointPillar to learn spatial geometric intuition from the anchor-free CenterPoint.
 2. **Feature-Level Beam-Wise Mixing (BWM)**: Inspired by LiDAR scanning properties, this module interleaves feature maps row-wise to create adversarial interference, forcing robust learning.
 3. **Consistency Regularization**: Ensures the student model focuses on geometric features rather than rote memorizing context, maintaining consistent predictions under BWM interference.
@@ -36,7 +36,7 @@ You can download the trained model weights from the link below:
 
 ## 🛠️ Quick Start
 ### 1. Environment Setup
-This code is built upon the OpenPCDet toolbox[cite: 435]. Please follow their official [installation guide](https://github.com/open-mmlab/OpenPCDet/blob/master/docs/INSTALL.md) to set up the environment.
+This code is built upon the OpenPCDet toolbox. Please follow their official [installation guide](https://github.com/open-mmlab/OpenPCDet/blob/master/docs/INSTALL.md) to set up the environment.
 * Python 3.10+ 
 * PyTorch 2.1.2 
 * CUDA 11.8 
