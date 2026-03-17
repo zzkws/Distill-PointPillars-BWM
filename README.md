@@ -1,6 +1,3 @@
-# Distill-PointPillars-BWM
-A lightweight 3D object detection framework using cross-architecture knowledge distillation and Beam-Wise Mixing (BWM) based on OpenPCDet.
-
 # Consistency-Regularized 3D Object Detection via BWM and Knowledge Distillation
 
 [![Framework](https://img.shields.io/badge/Framework-OpenPCDet-blue.svg)](https://github.com/open-mmlab/OpenPCDet)
@@ -35,17 +32,54 @@ You can download the trained model weights from the link below:
 * [Google Drive Link to Model Weights](https://drive.google.com/drive/folders/1EB3W9-JAxQtWEb7H3HVTq44JakdIRht_?usp=sharing)
 
 ## 🛠️ Quick Start
-### 1. Environment Setup
-This code is built upon the OpenPCDet toolbox. Please follow their official [installation guide](https://github.com/open-mmlab/OpenPCDet/blob/master/docs/INSTALL.md) to set up the environment.
-* Python 3.10+ 
-* PyTorch 2.1.2 
-* CUDA 11.8 
 
-### 2. Dataset Preparation
-Please download the [nuScenes dataset](https://www.nuscenes.org/nuscenes) and organize it according to the OpenPCDet dataset structure guidelines.
+### 1. Environment & Dataset Setup
+This project is built upon the [OpenPCDet](https://github.com/open-mmlab/OpenPCDet) toolbox. 
+1. Please follow their official [Installation Guide](https://github.com/open-mmlab/OpenPCDet/blob/master/docs/INSTALL.md) to set up the Python environment (Python 3.10, PyTorch 2.1.2, CUDA 11.8).
+2. Download the [nuScenes dataset](https://www.nuscenes.org/) and organize it according to the OpenPCDet dataset structure guidelines.
 
-### 3. Usage
-*(Add brief instructions here on how to run your `distill_pointpillar.py` or training YAML configs)*
+### 2. Code Integration
+Integrate the files from this repository into your local OpenPCDet workspace:
+
+1. **Model Scripts**: Copy `distill_pointpillar.py` and `consistency_distill_pointpillar.py` into the `pcdet/models/detectors/` directory of your OpenPCDet project.
+2. **Register Models**: Open `pcdet/models/detectors/__init__.py` and import the new detector classes so the framework can recognize them:
+   ```python
+   # Add these lines to __init__.py
+   from .distill_pointpillar import DistillPointPillar
+   from .consistency_distill_pointpillar import ConsistencyDistillPP
+   
+   __all__ = {
+       ...
+       'DistillPointPillar': DistillPointPillar,
+       'ConsistencyDistillPP': ConsistencyDistillPP,
+   }
+   ```
+3. **Configurations**: Copy the YAML configuration files (`pointpillar.yaml`, `distill_pointpillar.yaml`, `consistency_distill_pointpillar.yaml`) into the `tools/cfgs/nuscenes_models/` directory.
+
+### 3. Training
+Navigate to the `tools` directory in your OpenPCDet workspace and start training.
+
+**For Baseline PointPillar:**
 ```bash
-# Example command to run the distillation training:
-python tools/train.py --cfg_file configs/distill_pointpillar.yaml
+python train.py --cfg_file cfgs/nuscenes_models/pointpillar.yaml
+```
+
+**For Teacher-Student Distillation:**
+```bash
+python train.py --cfg_file cfgs/nuscenes_models/distill_pointpillar.yaml
+```
+
+**For Distillation + Beam-Wise Mixing (Ours):**
+```bash
+python train.py --cfg_file cfgs/nuscenes_models/consistency_distill_pointpillar.yaml
+```
+
+## 📄 Thesis
+For more detailed information regarding the theoretical foundation, mathematical proofs, and comprehensive ablation studies, please refer to our graduation thesis in the `docs/` directory:
+* [Consistency-Regularized Multi-Modal 3D Object Detection](Thesis_Zhou%20Zikang_admened.pdf)
+
+## ✒️ Author
+* **Zhou Zikang** - *Xiamen University Malaysia*
+
+## 📜 License
+This project is released under the [MIT License](LICENSE).
