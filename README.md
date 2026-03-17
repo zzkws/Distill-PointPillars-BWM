@@ -37,9 +37,9 @@ You can download the trained model weights from the link below:
 ## 🛠️ Quick Start
 ### 1. Environment Setup
 This code is built upon the OpenPCDet toolbox[cite: 435]. Please follow their official [installation guide](https://github.com/open-mmlab/OpenPCDet/blob/master/docs/INSTALL.md) to set up the environment.
-* Python 3.10+ [cite: 363]
-* PyTorch 2.1.2 [cite: 363]
-* CUDA 11.8 [cite: 363]
+* Python 3.10+ 
+* PyTorch 2.1.2 
+* CUDA 11.8 
 
 ### 2. Dataset Preparation
 Please download the [nuScenes dataset](https://www.nuscenes.org/nuscenes) and organize it according to the OpenPCDet dataset structure guidelines.
