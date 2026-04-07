@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## 📌 Introduction
-This repository contains the official implementation of the paper/project: **CONSISTENCY-REGULARIZED MULTI-MODAL 3D OBJECT DETECTION FOR AUTONOMOUS DRIVING VIA BEAM-WISE MIXING AND CROSS-SENSOR KNOWLEDGE DISTILLATION**. 
+This repository contains the official implementation of the paper: **CONSISTENCY-REGULARIZED MULTI-MODAL 3D OBJECT DETECTION FOR AUTONOMOUS DRIVING VIA BEAM-WISE MIXING AND CROSS-SENSOR KNOWLEDGE DISTILLATION**. 
 
 This project aims to solve the "impossible triangle" of robust perception in autonomous driving. We propose a Teacher-Student architecture distillation training framework based on OpenPCDet. By distilling knowledge from a complex Teacher model (CenterPoint) to a lightweight Student model (PointPillar), we achieve significant performance improvements without increasing the inference computational cost of the Student model.
 
@@ -73,9 +73,6 @@ python train.py --cfg_file cfgs/nuscenes_models/distill_pointpillar.yaml
 ```bash
 python train.py --cfg_file cfgs/nuscenes_models/consistency_distill_pointpillar.yaml
 ```
-
-## ✒️ Author
-* **Zhou Zikang** 
 
 ## 📜 License
 This project is released under the [MIT License](LICENSE).
