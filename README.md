@@ -74,12 +74,8 @@ python train.py --cfg_file cfgs/nuscenes_models/distill_pointpillar.yaml
 python train.py --cfg_file cfgs/nuscenes_models/consistency_distill_pointpillar.yaml
 ```
 
-## 📄 Thesis
-For more detailed information regarding the theoretical foundation, mathematical proofs, and comprehensive ablation studies, please refer to our graduation thesis in the `docs/` directory:
-* [Consistency-Regularized Multi-Modal 3D Object Detection](./AIT2209100_ZhouZikang_Thesis.pdf)
-
 ## ✒️ Author
-* **Zhou Zikang** - *Xiamen University Malaysia*
+* **Zhou Zikang** 
 
 ## 📜 License
 This project is released under the [MIT License](LICENSE).
