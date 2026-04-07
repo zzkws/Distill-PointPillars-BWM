@@ -8,7 +8,7 @@ from .pointpillar import PointPillar
 from .centerpoint import CenterPoint
 from .detector3d_template import Detector3DTemplate
 from ...utils import common_utils  
-
+# exp 3
 class ConsistencyDistillPP(Detector3DTemplate):
     def __init__(self, model_cfg, num_class, dataset):
         super().__init__(model_cfg, num_class, dataset)
