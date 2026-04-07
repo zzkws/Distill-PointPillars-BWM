@@ -7,7 +7,7 @@ from .centerpoint import CenterPoint
 from ...config import cfg_from_yaml_file
 from easydict import EasyDict
 from ...utils import common_utils
-
+# exp 2
 class DistillPointPillar(Detector3DTemplate):
     def __init__(self, model_cfg, num_class, dataset):
         super().__init__(model_cfg, num_class, dataset)
